@@ -1,4 +1,4 @@
-package Easy_Tasks;
+package Easy_Tasks.Task_20;
 
 import java.util.Stack;
 
@@ -28,6 +28,7 @@ public class Valid_Parentheses
                 if(isCorrespondingBracket(stack.peek(), c)) stack.pop();
                 else return false;
             }
+            else return false;
         }
         return stack.isEmpty();
     }
