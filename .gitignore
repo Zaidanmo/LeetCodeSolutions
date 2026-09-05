@@ -1,0 +1,33 @@
+
+# generated with AI
+
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# =========================
+# Java compiled files
+# =========================
+*.class
+
+out/
+build/
+target/
+
+# =========================
+# Logs / temporary files
+# =========================
+*.log
+*.tmp
+*.swp
+*~
+
+# =========================
+# OS-generated files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
