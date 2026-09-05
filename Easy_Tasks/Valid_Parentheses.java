@@ -14,9 +14,8 @@ public class Valid_Parentheses
         Stack<Character> stack = new Stack<>();
         stack.ensureCapacity(stringLength);
 
-        for (int i = 0; i < stringLength; i++)
+        for (char c : s.toCharArray())
         {
-            char c = s.charAt(i);
             // Check if opening bracket, if yes add
             if(isOpeningBracket(c)) stack.push(c);
 
@@ -26,9 +25,7 @@ public class Valid_Parentheses
             {
                 if(stack.isEmpty()) return false;
 
-                char peekChar = stack.peek();
-
-                if(isCorrespondingBracket(peekChar, c)) stack.pop();
+                if(isCorrespondingBracket(stack.peek(), c)) stack.pop();
                 else return false;
             }
         }
