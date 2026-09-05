@@ -6,7 +6,7 @@ public class Valid_Parentheses
 {
     public boolean isValid(String s)
     {
-        if(s==null || s.isEmpty()) return true;
+        if(s == null || s.isEmpty()) return true;
 
         int stringLength = s.length();
         if(stringLength % 2 != 0) return false;
@@ -19,7 +19,7 @@ public class Valid_Parentheses
             // Check if opening bracket, if yes add
             if(isOpeningBracket(c)) stack.push(c);
 
-            // Check if closing bracket, if yes then check top of stack and if they are equal and correspond to one another do pop,
+            // Check if closing bracket, if yes then check top of stack and if they are corresponding to one another do pop,
             // if not return false
             else if(isClosingBracket(c))
             {
@@ -32,19 +32,19 @@ public class Valid_Parentheses
         return stack.isEmpty();
     }
 
-    public boolean isOpeningBracket(char c){
+    private boolean isOpeningBracket(char c){
         return c == '(' || c == '{' || c == '[';
     }
-    public boolean isClosingBracket(char c){
+    private boolean isClosingBracket(char c){
         return c == ')' || c == '}' || c == ']';
     }
-    public boolean isCorrespondingBracket(char c1, char c2){
+    private boolean isCorrespondingBracket(char c1, char c2){
         return c1 == '(' && c2 == ')' || c1 == '{' && c2 == '}' || c1 == '[' && c2 == ']';
     }
 
     public static void main(String[] args){
         Valid_Parentheses obj = new Valid_Parentheses();
 
-        System.out.println(obj.isValid("([[])"));
+        System.out.println(obj.isValid("({[]})"));
     }
 }
