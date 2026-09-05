@@ -4,20 +4,24 @@ import java.util.Stack;
 
 public class Valid_Parentheses
 {
-    Stack<Character> stack = new Stack<>();
-
     public boolean isValid(String s)
     {
         if(s==null || s.isEmpty()) return true;
-        if(s.length() % 2 != 0) return false;
 
-        for (int i = 0; i < s.length(); i++)
+        int stringLength = s.length();
+        if(stringLength % 2 != 0) return false;
+
+        Stack<Character> stack = new Stack<>();
+        stack.ensureCapacity(stringLength);
+
+        for (int i = 0; i < stringLength; i++)
         {
             char c = s.charAt(i);
             // Check if opening bracket, if yes add
             if(isOpeningBracket(c)) stack.push(c);
 
-            // Check if closing bracket, if yes then check top of stack and if they are equal and correspond to one another do pop, if not return false
+            // Check if closing bracket, if yes then check top of stack and if they are equal and correspond to one another do pop,
+            // if not return false
             else if(isClosingBracket(c))
             {
                 if(stack.isEmpty()) return false;
