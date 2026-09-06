@@ -1,7 +1,8 @@
-package Easy_Tasks.Task_20;
+package Easy_Tasks;
 
 import java.util.Stack;
 
+// Task 20
 public class Valid_Parentheses
 {
     public boolean isValid(String s)
